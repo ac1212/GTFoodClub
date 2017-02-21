@@ -3,93 +3,48 @@
 
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_795570a359ee990e61659eb94fbe6595947a05b7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
         sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_5c91c7e789234cf76abf19c96c30ded7e32215ec\classes.dex" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_044efd19b8d25b49ed6b6d401940c6ff546ff728\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_e53a9fe47642bafc8fb8d504cf86619afc9b0381\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_da3eea8dcdc41dab15f5449c43fd80e1a168d96c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d8bda69479baa1b29011410e8431f8cf22d09d70">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_344204ad700117123f30fa93839e27a43a2b147e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
         sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_7e76d5a4ec5f3995087eb1d4b151a3133070c38b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_3b7db2b1be4a0afdc5e296b72a2046ec0d7138af\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="b1f02f70c5f26d7c18afd12c8eb9f993fdcf4450">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_eee92437e2cc851f8eb80fc8233ab1f58c35fc1b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_28c72b0f08a7c6feb89ec55ec16cf4564f972f7a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_d588ed1e4f9fabbad9c5f8c329b40c1011bb1609\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_131021956ba704457b00fc21928618308558d776\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_6216b243b45bda75e49b116674aab6a09a50f941\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.0"
-        sha1="68a3de8fcfb9615bcd551ece2090b5a4eae6e237">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f7fa141f1db62bac6b5ab10e25d7026b538df53c\classes.dex" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_e3cfc419c0ed843a45a504249edcbb066693d2f2\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -98,61 +53,106 @@
         optimize="true"
         revision="24.0.0"
         sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_053d431190d44f31891d4ae327a19e243234cc8e\classes.dex" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_053d431190d44f31891d4ae327a19e243234cc8e\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_ad350a6ad3508ec2ea832d98251011af4d93f956\classes.dex" />
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_4f8fd225d46350308ac9fdefa96b113178780957\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_c09650e7c5301506ca401d2939802cb8f83efa9e\classes.dex" />
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_42b2add46a137ca8352d982d1ddb5739c6e06dac\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_9bf090f6e83aa8070f9adc81e4e83501ac8fd944\classes.dex" />
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_9aff3c9f5864b17a6cb62c664c268284dd5a5b31\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_55cb26030da9a503c64692808c66adfe553e67d5\classes.dex" />
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_7fe0104f500f3901c38da9e3d1217cc01bbcb3c0\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_2b6c38d593768ca6e2b608259d10476be65d8753\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
         sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_b9aec367606b3bff4d033f599258202e989f6687\classes.dex" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_f8157b5a8bd55923afbcf5dbb83ab1921c6887a8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.0"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="D:\User\Documents\GitHub\Android SwipeView\android-swipeView\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_cf65dc293466052737ce311ca46162d7588f1801\classes.dex" />
+        sha1="349d367c4a436f9dac69f8b310caa35519a41f68">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9096fe773299c9bd46d7708a9072a3d4c0cd8fd1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_c941cdcd2b340ea063891f10f0c49bb04ba9da8f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_e69c456c021e03cc2486a0b6314bb4933934f606\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_37ae8638158ea3da1b7e7b0f9d4c03b98916b37e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_94eb4e8608f4ac9eb6de567da5d22741b1f81d4d\classes.dex" />
     </item>
 
 </items>

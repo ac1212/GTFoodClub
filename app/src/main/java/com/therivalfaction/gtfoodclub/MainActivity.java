@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayAdapter<GTEvent> adapter;
+    GTEventArrayAdapter adapter;
 
     //async XML downloader class
     private class XMLDownloader extends AsyncTask<String, Void, ArrayList<GTEvent>>
@@ -100,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
                                 gtEvent.title = parser.getText();
                                 break;
                             case "link":
-                                gtEvent.link = parser.getText();
+                                String tagText = parser.getText();
+                                gtEvent.link = tagText;
+                                gtEvent.id = tagText.substring(tagText.lastIndexOf('/')+1);
                                 break;
                             case "description":
                                 gtEvent.description = parser.getText();
@@ -111,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     parser.nextTag();
                 }while(!(parser.getEventType()==XmlPullParser.END_TAG && parser.getName().equals("item")));
                 //if the event has the desired keywords, add the event to the list
-                if(gtEvent.hasDesiredText())
+                if(gtEvent.hasDesiredText() && !gtEventList.contains(gtEvent))
                     gtEventList.add(gtEvent);
             }
             return gtEventList;
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        adapter = new ArrayAdapter<GTEvent>(this,R.layout.list_item);
+        adapter = new GTEventArrayAdapter(this,R.layout.list_item);
         new XMLDownloader().execute(URLString);
     }
 }
