@@ -1,15 +1,22 @@
 package com.therivalfaction.gtfoodclub;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Xml;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -24,21 +31,18 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     GTEventArrayAdapter adapter;
+    ActionBarDrawerToggle mDrawerToggle;
 
     //async XML downloader class
-    private class XMLDownloader extends AsyncTask<String, Void, ArrayList<GTEvent>>
-    {
+    private class XMLDownloader extends AsyncTask<String, Void, ArrayList<GTEvent>> {
 
         @Override
         protected ArrayList<GTEvent> doInBackground(String... strings) {
             ArrayList<GTEvent> ans = new ArrayList<GTEvent>();
-            try
-            {
+            try {
                 ans = getGoodEventsFromNet(strings[0]);
-            }
-            catch (Exception ex)
-            {
-                Log.e("AC",ex.toString());
+            } catch (Exception ex) {
+                Log.e("AC", ex.toString());
             }
             return ans;
         }
@@ -60,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        private ArrayList<GTEvent> getGoodEventsFromNet(String urlString) throws XmlPullParserException, IOException
-        {
+        private ArrayList<GTEvent> getGoodEventsFromNet(String urlString) throws XmlPullParserException, IOException {
             InputStream stream = null;
 
             //connect to url
@@ -81,28 +84,24 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<GTEvent> gtEventList = new ArrayList<GTEvent>();
             //parser.require(XmlPullParser.START_TAG,null,"channel");
             int count = 0;
-            while(parser.next() != XmlPullParser.END_DOCUMENT && count <10)
-            {
+            while (parser.next() != XmlPullParser.END_DOCUMENT && count < 10) {
                 //unles it is an item, we are not interested
-                if(parser.getEventType() != XmlPullParser.START_TAG) continue;
-                if(!parser.getName().equals("item")) continue;
+                if (parser.getEventType() != XmlPullParser.START_TAG) continue;
+                if (!parser.getName().equals("item")) continue;
                 //found an item, read tags and save those that matter
                 GTEvent gtEvent = new GTEvent();
-                do
-                {
-                    if(parser.getEventType() == XmlPullParser.START_TAG)
-                    {
+                do {
+                    if (parser.getEventType() == XmlPullParser.START_TAG) {
                         String tagname = parser.getName();
                         parser.next();
-                        switch (tagname)
-                        {
+                        switch (tagname) {
                             case "title":
                                 gtEvent.title = parser.getText();
                                 break;
                             case "link":
                                 String tagText = parser.getText();
                                 gtEvent.link = tagText;
-                                gtEvent.id = tagText.substring(tagText.lastIndexOf('/')+1);
+                                gtEvent.id = tagText.substring(tagText.lastIndexOf('/') + 1);
                                 break;
                             case "description":
                                 gtEvent.description = parser.getText();
@@ -111,9 +110,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     parser.nextTag();
-                }while(!(parser.getEventType()==XmlPullParser.END_TAG && parser.getName().equals("item")));
+                }
+                while (!(parser.getEventType() == XmlPullParser.END_TAG && parser.getName().equals("item")));
                 //if the event has the desired keywords, add the event to the list
-                if(gtEvent.hasDesiredText() && !gtEventList.contains(gtEvent))
+                if (gtEvent.hasDesiredText() && !gtEventList.contains(gtEvent))
                     gtEventList.add(gtEvent);
             }
             return gtEventList;
@@ -121,13 +121,72 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private static final String URLString = "http://www.calendar.gatech.edu/feeds/events.xml";
+    private static final String URLStringCalendar = "http://www.calendar.gatech.edu/feeds/events.xml";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        adapter = new GTEventArrayAdapter(this,R.layout.list_item);
-        new XMLDownloader().execute(URLString);
+        //set toolbar
+        Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(tb);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.drawer_open,R.string.drawer_closed){
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+            }
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+        };
+        drawerLayout.addDrawerListener(mDrawerToggle);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        // load keywords
+        KeywordArrayAdapter kaa = new KeywordArrayAdapter(this, R.layout.keyword_list_item);
+        kaa.add("Pizza");
+        kaa.add("Free Food");
+        kaa.add("Refreshment");
+        kaa.add("Coffee");
+        kaa.add("Free");
+        ListView keywordListView = (ListView) findViewById(R.id.drawerListView);
+        keywordListView.setAdapter(kaa);
+
+        adapter = new GTEventArrayAdapter(this, R.layout.list_item);
+        new XMLDownloader().execute(URLStringCalendar);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(mDrawerToggle.onOptionsItemSelected(item)) return true;
+        switch (item.getItemId()) {
+            case R.id.about_menu_item:
+                Intent i = new Intent(this, AboutActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
