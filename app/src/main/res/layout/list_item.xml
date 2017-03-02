@@ -5,15 +5,16 @@
     android:orientation="horizontal">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:text="Word"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:paddingRight="16dp"
-        android:textColor="@android:color/holo_green_dark"
+        android:text="FREE FOOD"
+        android:background="@drawable/keyword_shape_small"
+        android:textColor="@android:color/white"
         android:textStyle="normal|bold"
-        android:id="@+id/wordTextView" />
+        android:id="@+id/wordTextView"
+        android:textAlignment="center"
+        android:maxLines="1"
+        android:ellipsize="end" />
 
     <TextView
         android:text="Title"
@@ -21,6 +22,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/titleTextView"
         android:paddingTop="12dp"
-        android:paddingBottom="12dp" />
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"/>
 </LinearLayout>
 

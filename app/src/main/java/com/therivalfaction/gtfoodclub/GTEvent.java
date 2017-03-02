@@ -1,5 +1,7 @@
 package com.therivalfaction.gtfoodclub;
 
+import java.util.Collection;
+
 /**
  * Created by User on 18-Feb-17.
  */
@@ -13,6 +15,24 @@ public class GTEvent {
     {
         String s = description.toLowerCase();
         return s.contains("pizza")||s.contains("free")||s.contains("refreshment")||s.contains("coffee")||s.contains("snack");
+    }
+
+    public boolean hasDesiredText(Collection<String> keywords)
+    {
+        String s = description.toLowerCase();
+        for (String kw : keywords)
+            if(s.contains(kw.toLowerCase()))
+                return true;
+        return false;
+    }
+
+    public String getWord(Collection<String> keywords)
+    {
+        String s = description.toUpperCase();
+        for (String kw : keywords)
+            if(s.contains(kw.toUpperCase()))
+                return kw.toUpperCase();
+        return null;
     }
 
     @Override

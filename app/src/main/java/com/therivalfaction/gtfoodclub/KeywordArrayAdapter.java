@@ -8,14 +8,30 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by User on 22-Feb-17.
  */
 
 public class KeywordArrayAdapter extends ArrayAdapter<String> {
+
+
+
     public KeywordArrayAdapter(Context context, int resource) {
         super(context, resource);
+
     }
+
+    public ArrayList<String> getItems()
+    {
+        ArrayList<String> items = new ArrayList<String>();
+        for(int i = 0;i<getCount();i++)
+            items.add(getItem(i));
+        return items;
+    }
+
 
     @NonNull
     @Override

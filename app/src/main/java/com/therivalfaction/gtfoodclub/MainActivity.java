@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     GTEventArrayAdapter adapter;
     ActionBarDrawerToggle mDrawerToggle;
+    KeywordArrayAdapter mKeywordArrayAdapter;
 
     //async XML downloader class
     private class XMLDownloader extends AsyncTask<String, Void, ArrayList<GTEvent>> {
@@ -82,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(stream, null);
             ArrayList<GTEvent> gtEventList = new ArrayList<GTEvent>();
-            //parser.require(XmlPullParser.START_TAG,null,"channel");
             int count = 0;
             while (parser.next() != XmlPullParser.END_DOCUMENT && count < 10) {
                 //unles it is an item, we are not interested
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 while (!(parser.getEventType() == XmlPullParser.END_TAG && parser.getName().equals("item")));
                 //if the event has the desired keywords, add the event to the list
-                if (gtEvent.hasDesiredText() && !gtEventList.contains(gtEvent))
+                if (gtEvent.hasDesiredText(mKeywordArrayAdapter.getItems()) && !gtEventList.contains(gtEvent))
                     gtEventList.add(gtEvent);
             }
             return gtEventList;
@@ -143,14 +143,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         // load keywords
-        KeywordArrayAdapter kaa = new KeywordArrayAdapter(this, R.layout.keyword_list_item);
-        kaa.add("Pizza");
-        kaa.add("Free Food");
-        kaa.add("Refreshment");
-        kaa.add("Coffee");
-        kaa.add("Free");
+        mKeywordArrayAdapter = new KeywordArrayAdapter(this, R.layout.keyword_list_item);
+        DataHelper dh = new DataHelper(this);
+        mKeywordArrayAdapter.addAll(dh.loadKeywords());
         ListView keywordListView = (ListView) findViewById(R.id.drawerListView);
-        keywordListView.setAdapter(kaa);
+        keywordListView.setAdapter(mKeywordArrayAdapter);
 
         adapter = new GTEventArrayAdapter(this, R.layout.list_item);
         new XMLDownloader().execute(URLStringCalendar);

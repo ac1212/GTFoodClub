@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by User on 20-Feb-17.
  */
@@ -26,7 +28,9 @@ public class GTEventArrayAdapter extends ArrayAdapter<GTEvent> {
         TextView tvTitle = (TextView) convertView.findViewById(R.id.titleTextView);
         TextView tvWord = (TextView) convertView.findViewById(R.id.wordTextView);
         tvTitle.setText(gtEvent.title);
-        tvWord.setText(gtEvent.getWord());
+        MainActivity ma = (MainActivity) getContext();
+        ArrayList<String> keywords = ma.mKeywordArrayAdapter.getItems();
+        tvWord.setText(gtEvent.getWord(keywords));
         return convertView;
     }
 }

@@ -24,10 +24,12 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/mainListView" />
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:id="@+id/mainListView"
+            android:layout_below="@+id/toolbar" />
     </RelativeLayout>
     <ListView
         android:id="@+id/drawerListView"
