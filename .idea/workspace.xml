@@ -2184,7 +2184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488546093208</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="date shown2">
+      <created>1488546103809</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1488546103809</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2249,7 +2256,8 @@
     <MESSAGE value="sharedPreferences implemented" />
     <MESSAGE value="date parsed" />
     <MESSAGE value="date shown" />
-    <option name="LAST_COMMIT_MESSAGE" value="date shown" />
+    <MESSAGE value="date shown2" />
+    <option name="LAST_COMMIT_MESSAGE" value="date shown2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
