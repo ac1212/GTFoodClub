@@ -26,11 +26,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -161,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         ListView keywordListView = (ListView) findViewById(R.id.drawerListView);
         keywordListView.setAdapter(mKeywordArrayAdapter);
 
-        adapter = new GTEventArrayAdapter(this, R.layout.list_item);
+        adapter = new GTEventArrayAdapter(this, R.layout.main_list_item);
         new XMLDownloader().execute(URLStringCalendar);
     }
 

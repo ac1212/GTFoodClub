@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:rowCount="2"
+    android:columnCount="2"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+
+
+    <TextView
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:text="FREE FOOD"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|bold"
+        android:id="@+id/wordTextView"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_gravity="end"
+        android:textAlignment="viewEnd" />
+
+    <TextView
+        android:text="Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:id="@+id/titleTextView"
+        android:paddingLeft="16dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:id="@+id/dateTextView"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textStyle="normal|italic"
+        android:layout_gravity="end"
+        android:textAlignment="viewEnd" />
+    <TextView
+        android:text="Desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:id="@+id/descTextView"
+        android:paddingLeft="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+</GridLayout>
+
