@@ -1,6 +1,8 @@
 package com.therivalfaction.gtfoodclub;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 
 /**
  * Created by User on 18-Feb-17.
@@ -9,6 +11,7 @@ public class GTEvent {
     public String id;
     public String title;
     public String link;
+    public Date time;
     public String description;
 
     public boolean hasDesiredText()
@@ -29,7 +32,10 @@ public class GTEvent {
     public String getWord(Collection<String> keywords)
     {
         String s = description.toUpperCase();
-        for (String kw : keywords)
+        //TODO: replace this by priority
+        String[] sortedKeywords = keywords.toArray(new String[keywords.size()]);
+        Arrays.sort(sortedKeywords, (s1,s2) -> (s2.length()-s1.length()));
+        for (String kw : sortedKeywords)
             if(s.contains(kw.toUpperCase()))
                 return kw.toUpperCase();
         return null;

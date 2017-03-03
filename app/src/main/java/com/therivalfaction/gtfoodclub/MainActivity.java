@@ -26,7 +26,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        private ArrayList<GTEvent> getGoodEventsFromNet(String urlString) throws XmlPullParserException, IOException {
+        private ArrayList<GTEvent> getGoodEventsFromNet(String urlString) throws XmlPullParserException, IOException, ParseException {
             InputStream stream = null;
 
             //connect to url
@@ -105,6 +110,13 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case "description":
                                 gtEvent.description = parser.getText();
+                                //TODO: grabbing the first date. grab all dates on recurring events.
+                                int idx = gtEvent.description.indexOf("dc:date");
+                                String dateString = gtEvent.description.substring(idx+42,idx+67);
+                                dateString = dateString.substring(0,22)+dateString.substring(23,25);
+                                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+                                Date time = df.parse(dateString);
+                                gtEvent.time = time;
                                 break;
                             default:
                         }
