@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06008a38-a669-47b8-b8b3-ab9461d73219" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/therivalfaction/gtfoodclub/GTEventArrayAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/therivalfaction/gtfoodclub/GTEventArrayAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/therivalfaction/gtfoodclub/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/therivalfaction/gtfoodclub/MainActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_list_item.xml" />
     </list>
     <ignored path="GTFoodClub.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2185,7 +2177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488502605394</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="date shown">
+      <created>1488546093208</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1488546093208</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2249,7 +2248,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sharedPreferences implemented" />
     <MESSAGE value="date parsed" />
-    <option name="LAST_COMMIT_MESSAGE" value="date parsed" />
+    <MESSAGE value="date shown" />
+    <option name="LAST_COMMIT_MESSAGE" value="date shown" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
