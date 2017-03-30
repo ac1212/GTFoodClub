@@ -47,9 +47,12 @@ public class GTEventArrayAdapter extends ArrayAdapter<GTEvent> {
         int evtY = cal.get(Calendar.YEAR);
         int evtM = cal.get(Calendar.MONTH);
         int evtD = cal.get(Calendar.DAY_OF_MONTH);
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd");
-        if(evtY==curY && evtM==curM && evtD==curD) tvDate.setText("Today");
-        else tvDate.setText(sdf.format(cal.getTime()));
+        SimpleDateFormat sdfLater = new SimpleDateFormat("MMM dd");
+        SimpleDateFormat sdfToday = new SimpleDateFormat("hh:mm aa");
+        if(evtY==curY && evtM==curM && evtD==curD)
+            tvDate.setText(sdfToday.format(cal.getTime()));
+        else
+            tvDate.setText(sdfLater.format(cal.getTime()));
         return convertView;
     }
 }

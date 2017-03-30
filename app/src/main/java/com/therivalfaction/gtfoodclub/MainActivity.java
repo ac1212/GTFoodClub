@@ -29,7 +29,11 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -88,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             ArrayList<GTEvent> gtEventList = new ArrayList<GTEvent>();
             int count = 0;
             while (parser.next() != XmlPullParser.END_DOCUMENT && count < 10) {
-                //unles it is an item, we are not interested
+                //unless it is an item, we are not interested
                 if (parser.getEventType() != XmlPullParser.START_TAG) continue;
                 if (!parser.getName().equals("item")) continue;
                 //found an item, read tags and save those that matter
@@ -124,7 +128,12 @@ public class MainActivity extends AppCompatActivity {
                 while (!(parser.getEventType() == XmlPullParser.END_TAG && parser.getName().equals("item")));
                 //if the event has the desired keywords, add the event to the list
                 if (gtEvent.hasDesiredText(mKeywordArrayAdapter.getItems()) && !gtEventList.contains(gtEvent))
+                {
+                    //TODO: get description
+                    //gtEvent.surroundingText();
                     gtEventList.add(gtEvent);
+                }
+
             }
             return gtEventList;
         }
@@ -155,7 +164,13 @@ public class MainActivity extends AppCompatActivity {
         // load keywords
         mKeywordArrayAdapter = new KeywordArrayAdapter(this, R.layout.keyword_list_item);
         DataHelper dh = new DataHelper(this);
-        mKeywordArrayAdapter.addAll(dh.loadKeywords());
+        ArrayList<String> sortedKeywords = new ArrayList<String>(dh.loadKeywords());
+        Collections.sort(sortedKeywords);
+        for(int i = 0;i<sortedKeywords.size();i++)
+            sortedKeywords.set(i, sortedKeywords.get(i).substring(4));
+        mKeywordArrayAdapter.addAll(sortedKeywords);
+
+
         ListView keywordListView = (ListView) findViewById(R.id.drawerListView);
         keywordListView.setAdapter(mKeywordArrayAdapter);
 

@@ -30,11 +30,11 @@ public class DataHelper {
         if(keywordSet==null) // this is being opened the first time. generate default set
         {
             keywordSet = new HashSet<String>();
-            keywordSet.add("Pizza");
-            keywordSet.add("Free Food");
-            keywordSet.add("Refreshment");
-            keywordSet.add("Coffee");
-            keywordSet.add("Free");
+            keywordSet.add("001$Pizza");
+            keywordSet.add("002$Free Food");
+            keywordSet.add("003$Refreshment");
+            keywordSet.add("004$Coffee");
+            keywordSet.add("005$Free");
         }
         return keywordSet;
 
