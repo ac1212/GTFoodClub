@@ -1,5 +1,6 @@
 package com.therivalfaction.gtfoodclub;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
@@ -29,16 +30,23 @@ public class GTEvent {
         return false;
     }
 
-    public String getWord(Collection<String> keywords)
+    public String getWord(ArrayList<String> keywords)
     {
         String s = description.toUpperCase();
-        //TODO: replace this by priority
         String[] sortedKeywords = keywords.toArray(new String[keywords.size()]);
-        Arrays.sort(sortedKeywords, (s1,s2) -> (s2.length()-s1.length()));
         for (String kw : sortedKeywords)
             if(s.contains(kw.toUpperCase()))
                 return kw.toUpperCase();
         return null;
+    }
+
+    public String getSentence(String word)
+    {
+        String s = description.toUpperCase();
+        int idx = s.indexOf(word); // get to the beginning of the word
+        String sentence = description.substring(idx, idx+100); // get next 100 chars
+        if(sentence.contains("<")) sentence = sentence.substring(0,sentence.indexOf("<")); // cut off if XML tag reached
+        return "..."+sentence+"...";
     }
 
     @Override

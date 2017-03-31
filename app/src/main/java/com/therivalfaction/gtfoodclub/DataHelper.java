@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,7 +21,7 @@ public class DataHelper {
         context = _context;
     }
 
-    public Set<String> loadKeywords()
+    public ArrayList<String> loadKeywords()
     {
         SharedPreferences sharedPref = context.getSharedPreferences(
                 context.getString(R.string.keyword_sharedPref_file_key),
@@ -32,11 +33,16 @@ public class DataHelper {
             keywordSet = new HashSet<String>();
             keywordSet.add("001$Pizza");
             keywordSet.add("002$Free Food");
-            keywordSet.add("003$Refreshment");
-            keywordSet.add("004$Coffee");
-            keywordSet.add("005$Free");
+            keywordSet.add("003$Free Food");
+            keywordSet.add("004$Refreshment");
+            keywordSet.add("005$Coffee");
+            keywordSet.add("006$Free");
         }
-        return keywordSet;
+        ArrayList<String> sortedKeywords = new ArrayList<>(keywordSet);
+        Collections.sort(sortedKeywords);
+        for(int i = 0;i<sortedKeywords.size();i++)
+            sortedKeywords.set(i, sortedKeywords.get(i).substring(4)); //remove the sorting index
+        return sortedKeywords;
 
     }
 }

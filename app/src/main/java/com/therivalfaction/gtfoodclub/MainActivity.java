@@ -127,7 +127,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 while (!(parser.getEventType() == XmlPullParser.END_TAG && parser.getName().equals("item")));
                 //if the event has the desired keywords, add the event to the list
-                if (gtEvent.hasDesiredText(mKeywordArrayAdapter.getItems()) && !gtEventList.contains(gtEvent))
+                Date now = new Date();
+                if (gtEvent.hasDesiredText(mKeywordArrayAdapter.getItems()) && // has desired text
+                        !gtEventList.contains(gtEvent) &&                      // not a duplicate
+                        gtEvent.time.compareTo(now)>0 )                        //not past
                 {
                     //TODO: get description
                     //gtEvent.surroundingText();
@@ -164,11 +167,7 @@ public class MainActivity extends AppCompatActivity {
         // load keywords
         mKeywordArrayAdapter = new KeywordArrayAdapter(this, R.layout.keyword_list_item);
         DataHelper dh = new DataHelper(this);
-        ArrayList<String> sortedKeywords = new ArrayList<String>(dh.loadKeywords());
-        Collections.sort(sortedKeywords);
-        for(int i = 0;i<sortedKeywords.size();i++)
-            sortedKeywords.set(i, sortedKeywords.get(i).substring(4));
-        mKeywordArrayAdapter.addAll(sortedKeywords);
+        mKeywordArrayAdapter.addAll(dh.loadKeywords());
 
 
         ListView keywordListView = (ListView) findViewById(R.id.drawerListView);

@@ -57,6 +57,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:ellipsize="end"
+            android:textStyle="normal|italic"
             android:id="@+id/descTextView"
             android:paddingLeft="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
