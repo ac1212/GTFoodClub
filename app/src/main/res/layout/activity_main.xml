@@ -29,8 +29,19 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:id="@+id/mainListView"
-            android:layout_below="@+id/toolbar" />
+            android:layout_below="@+id/toolbar" >
+        </ListView>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/load_anim"
+            android:id="@+id/imageView_loadAnim" />
     </RelativeLayout>
+
     <ListView
         android:id="@+id/drawerListView"
         android:layout_width="240dp"

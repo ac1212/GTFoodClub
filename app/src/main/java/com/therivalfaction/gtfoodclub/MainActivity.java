@@ -2,6 +2,7 @@ package com.therivalfaction.gtfoodclub;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -46,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected ArrayList<GTEvent> doInBackground(String... strings) {
+
+
+
             ArrayList<GTEvent> ans = new ArrayList<GTEvent>();
             try {
                 ans = getGoodEventsFromNet(strings[0]);
@@ -58,7 +63,14 @@ public class MainActivity extends AppCompatActivity {
         // once retrieved, display the good events
         @Override
         protected void onPostExecute(ArrayList<GTEvent> gtEvents) {
+            //remove loading
             ListView lv = (ListView) findViewById(R.id.mainListView);
+            lv.setAlpha(1f);
+            ImageView iv = (ImageView) findViewById(R.id.imageView_loadAnim);
+            AnimationDrawable ad = (AnimationDrawable) iv.getBackground();
+            ad.stop();
+            iv.setVisibility(View.GONE);
+            //fill listview
             adapter.addAll(gtEvents);
             lv.setAdapter(adapter);
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -174,6 +186,15 @@ public class MainActivity extends AppCompatActivity {
         keywordListView.setAdapter(mKeywordArrayAdapter);
 
         adapter = new GTEventArrayAdapter(this, R.layout.main_list_item);
+
+        //show loading
+        ListView lv = (ListView) findViewById(R.id.mainListView);
+        lv.setAlpha(0.2f);
+        ImageView iv = (ImageView) findViewById(R.id.imageView_loadAnim);
+        iv.setVisibility(View.VISIBLE);
+        AnimationDrawable ad = (AnimationDrawable) iv.getBackground();
+        ad.start();
+        //load events asynchronously
         new XMLDownloader().execute(URLStringCalendar);
     }
 
