@@ -33,13 +33,13 @@
         </ListView>
 
         <ImageView
+            android:id="@+id/imageView_loadAnim"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="60dp"
             android:layout_below="@id/toolbar"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/load_anim"
-            android:id="@+id/imageView_loadAnim" />
+            android:layout_marginTop="60dp"
+            android:background="@drawable/load_anim_b" />
     </RelativeLayout>
 
     <ListView

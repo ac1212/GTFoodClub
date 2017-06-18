@@ -1,6 +1,7 @@
 package com.therivalfaction.gtfoodclub;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
@@ -57,8 +58,10 @@ public class GTEventArrayAdapter extends ArrayAdapter<GTEvent> {
             tvDate.setText(sdfToday.format(cal.getTime()));
             tvDate.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
         }
-        else
+        else {
             tvDate.setText(sdfLater.format(cal.getTime()));
+            tvDate.setTextColor(tvTitle.getTextColors());
+        }
         // set description
         TextView tvDesc = (TextView) convertView.findViewById(R.id.descTextView);
         tvDesc.setText(gtEvent.getSentence(keyword));

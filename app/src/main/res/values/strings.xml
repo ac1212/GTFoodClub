@@ -5,4 +5,6 @@
     <string name="version">v0.3</string>
     <string name="keyword_sharedPref_file_key">keywords_file</string>
     <string name="keyword_sharedPref_set_key">keywords_set</string>
+    <string name="intentkey_notification_id">notification_id</string>
+    <string name="intentkey_notification">notification</string>
 </resources>
