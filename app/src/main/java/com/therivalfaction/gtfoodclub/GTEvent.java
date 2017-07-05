@@ -37,7 +37,7 @@ public class GTEvent {
         for (String kw : sortedKeywords)
             if(s.contains(kw.toUpperCase()))
                 return kw.toUpperCase();
-        return null;
+        return "";
     }
 
     public String getSentence(String word)
@@ -60,6 +60,7 @@ public class GTEvent {
         return this.id.equals(that.id);
     }
 
+    @Deprecated
     public String getWord()
     {
         String s = description.toUpperCase();

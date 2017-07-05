@@ -18,6 +18,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".AboutActivity"></activity>
+
+        <receiver android:name=".MyNotificationReceiver"
+            android:directBootAware="true"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -8,15 +8,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.Xml;
@@ -89,23 +90,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-            //set notifications 1 hour before the event
-            android.support.v4.app.NotificationCompat.Builder nb = new NotificationCompat.Builder(getApplicationContext())
-                    .setContentTitle("AC")
-                    .setContentText("yolo")
-                    .setSmallIcon(R.drawable.load_anim0);
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
-            nb.setContentIntent(pi);
-            Notification n = nb.build();
-            //NotificationManager nm = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-            //nm.notify(1,n);
-            Intent nIntent = new Intent(getApplicationContext(),NotificationReceiver.class);
-            nIntent.putExtra(getResources().getString(R.string.intentkey_notification_id),1);
-            nIntent.putExtra(getResources().getString(R.string.intentkey_notification),n);
-            PendingIntent pIntent = PendingIntent.getBroadcast(getApplicationContext(),1,nIntent,PendingIntent.FLAG_CANCEL_CURRENT);
-            AlarmManager am = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-            am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,SystemClock.elapsedRealtime()+1000*20,1000*30,pIntent);
+
+            for(GTEvent gtEvent : gtEvents) scheduleNotification(getApplicationContext(),gtEvent);
         }
 
         private ArrayList<GTEvent> getGoodEventsFromNet(String urlString) throws XmlPullParserException, IOException, ParseException {
@@ -218,8 +204,34 @@ public class MainActivity extends AppCompatActivity {
         iv.setVisibility(View.VISIBLE);
         AnimationDrawable ad = (AnimationDrawable) iv.getBackground();
         ad.start();
+        Log.d("AC1", "onCreate fired");
         //load events asynchronously
         new XMLDownloader().execute(URLStringCalendar);
+    }
+
+    private void scheduleNotification(Context context, GTEvent gtEvent) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+                .setContentTitle("Upcoming event: " + gtEvent.getWord(mKeywordArrayAdapter.getItems()))
+                .setContentText("In 1 hour")
+                .setAutoCancel(true)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+
+        Intent intent = new Intent(context, MainActivity.class);
+        //TODO: replace with hashcode
+        int notificationId = (int) gtEvent.time.getTime();
+        PendingIntent activity = PendingIntent.getActivity(context, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        builder.setContentIntent(activity);
+
+        Notification notification = builder.build();
+
+        Intent notificationIntent = new Intent(context, MyNotificationReceiver.class);
+        notificationIntent.putExtra(MyNotificationReceiver.NOTIFICATION_ID, notificationId);
+        notificationIntent.putExtra(MyNotificationReceiver.NOTIFICATION, notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, notificationId, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, gtEvent.time.getTime()-60*60*1000, pendingIntent);
     }
 
 
