@@ -37,9 +37,7 @@ public class GTEventArrayAdapter extends ArrayAdapter<GTEvent> {
         tvTitle.setText(gtEvent.title);
         //set keyword
         TextView tvWord = (TextView) convertView.findViewById(R.id.wordTextView);
-        MainActivity ma = (MainActivity) getContext();
-        ArrayList<String> keywords = ma.mKeywordArrayAdapter.getItems();
-        String keyword = gtEvent.getWord(keywords);
+        String keyword = gtEvent.word;
         tvWord.setText(keyword);
         //set date
         TextView tvDate = (TextView) convertView.findViewById(R.id.dateTextView);
@@ -64,7 +62,7 @@ public class GTEventArrayAdapter extends ArrayAdapter<GTEvent> {
         }
         // set description
         TextView tvDesc = (TextView) convertView.findViewById(R.id.descTextView);
-        tvDesc.setText(gtEvent.getSentence(keyword));
+        tvDesc.setText(gtEvent.getSentence());
         return convertView;
     }
 }

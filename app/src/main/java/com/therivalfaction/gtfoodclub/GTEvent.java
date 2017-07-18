@@ -1,5 +1,7 @@
 package com.therivalfaction.gtfoodclub;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,43 +11,30 @@ import java.util.Date;
  * Created by User on 18-Feb-17.
  */
 public class GTEvent {
-    public String id;
-    public String title;
-    public String link;
-    public Date time;
-    public String description;
+    public final String id;
+    public final String title;
+    public final String link;
+    public final Date time;
+    public final String word;
+    public final String description;
 
-    public boolean hasDesiredText()
-    {
-        String s = description.toLowerCase();
-        return s.contains("pizza")||s.contains("free")||s.contains("refreshment")||s.contains("coffee")||s.contains("snack");
+    public GTEvent(String id, String title, String link, Date time, String word, String description) {
+        this.id = id;
+        this.title = title;
+        this.link = link;
+        this.time = time;
+        this.word = word;
+        this.description = description;
     }
 
-    public boolean hasDesiredText(Collection<String> keywords)
+    public String getSentence()
     {
-        String s = description.toLowerCase();
-        for (String kw : keywords)
-            if(s.contains(kw.toLowerCase()))
-                return true;
-        return false;
-    }
-
-    public String getWord(ArrayList<String> keywords)
-    {
-        String s = description.toUpperCase();
-        String[] sortedKeywords = keywords.toArray(new String[keywords.size()]);
-        for (String kw : sortedKeywords)
-            if(s.contains(kw.toUpperCase()))
-                return kw.toUpperCase();
-        return "";
-    }
-
-    public String getSentence(String word)
-    {
-        String s = description.toUpperCase();
+        String s = title.toUpperCase() + " < " + description.toUpperCase();
         int idx = s.indexOf(word); // get to the beginning of the word
-        String sentence = description.substring(idx, idx+100); // get next 100 chars
+        s = title + " < " + description;
+        String sentence = s.substring(idx, s.length()<= idx+100 ? s.length() : idx+100); // get next 100 chars
         if(sentence.contains("<")) sentence = sentence.substring(0,sentence.indexOf("<")); // cut off if XML tag reached
+        //if(sentence.toUpperCase().compareTo(word)==0) Log.d("AC1",s);
         return "..."+sentence+"...";
     }
 
@@ -58,17 +47,5 @@ public class GTEvent {
     public boolean equals(Object obj) {
         GTEvent that = (GTEvent) obj;
         return this.id.equals(that.id);
-    }
-
-    @Deprecated
-    public String getWord()
-    {
-        String s = description.toUpperCase();
-        if(s.contains("PIZZA")) return "PIZZA";
-        if(s.contains("FREE")) return "FREE";
-        if(s.contains("REFRESHMENT")) return "REFRESHMENT";
-        if(s.contains("COFFEE")) return "COFFEE";
-        if(s.contains("SNACK")) return "SNACK";
-        return "OTHER";
     }
 }

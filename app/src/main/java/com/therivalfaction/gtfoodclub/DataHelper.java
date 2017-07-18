@@ -33,7 +33,8 @@ public class DataHelper {
             keywordSet = new HashSet<String>();
             keywordSet.add("001$Pizza");
             keywordSet.add("002$Free Food");
-            keywordSet.add("003$Free Food");
+            keywordSet.add("004$Lunch");
+            keywordSet.add("003$Food");
             keywordSet.add("004$Refreshment");
             keywordSet.add("005$Coffee");
             keywordSet.add("006$Free");

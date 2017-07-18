@@ -2,7 +2,6 @@ package com.therivalfaction.gtfoodclub;
 
 import android.app.AlarmManager;
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +10,6 @@ import android.graphics.drawable.AnimationDrawable;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -39,11 +37,7 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
-import java.util.List;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -118,29 +112,32 @@ public class MainActivity extends AppCompatActivity {
                 if (parser.getEventType() != XmlPullParser.START_TAG) continue;
                 if (!parser.getName().equals("item")) continue;
                 //found an item, read tags and save those that matter
-                GTEvent gtEvent = new GTEvent();
+                String title = "Untitled Event";
+                String id = "0";
+                String link = "";
+                Date time = new Date();
+                String description = "";
                 do {
                     if (parser.getEventType() == XmlPullParser.START_TAG) {
                         String tagname = parser.getName();
                         parser.next();
                         switch (tagname) {
                             case "title":
-                                gtEvent.title = parser.getText();
+                                title = parser.getText();
                                 break;
                             case "link":
                                 String tagText = parser.getText();
-                                gtEvent.link = tagText;
-                                gtEvent.id = tagText.substring(tagText.lastIndexOf('/') + 1);
+                                link = tagText;
+                                id = tagText.substring(tagText.lastIndexOf('/') + 1);
                                 break;
                             case "description":
-                                gtEvent.description = parser.getText();
+                                description = parser.getText();
                                 //TODO: grabbing the first date. grab all dates on recurring events.
-                                int idx = gtEvent.description.indexOf("dc:date");
-                                String dateString = gtEvent.description.substring(idx+42,idx+67);
+                                int idx = description.indexOf("dc:date");
+                                String dateString = description.substring(idx+42,idx+67);
                                 dateString = dateString.substring(0,22)+dateString.substring(23,25);
                                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-                                Date time = df.parse(dateString);
-                                gtEvent.time = time;
+                                time = df.parse(dateString);
                                 break;
                             default:
                         }
@@ -149,14 +146,24 @@ public class MainActivity extends AppCompatActivity {
                 }
                 while (!(parser.getEventType() == XmlPullParser.END_TAG && parser.getName().equals("item")));
                 //if the event has the desired keywords, add the event to the list
+                boolean hasAKeyword = false;
+                String word = "";
+                String s = title.toUpperCase() +" " + description.toUpperCase();
+                String[] sortedKeywords = mKeywordArrayAdapter
+                        .getItems()
+                        .toArray(new String[mKeywordArrayAdapter.getItems().size()]);
+                for (String kw : sortedKeywords)
+                    if(s.contains(kw.toUpperCase()))
+                    {
+                        hasAKeyword = true;
+                        word = kw.toUpperCase();
+                        break;
+                    }
                 Date now = new Date();
-                if (gtEvent.hasDesiredText(mKeywordArrayAdapter.getItems()) && // has desired text
-                        !gtEventList.contains(gtEvent) &&                      // not a duplicate
-                        gtEvent.time.compareTo(now)>0 )                        //not past
+                if (hasAKeyword && time.compareTo(now)>0 )
                 {
-                    //TODO: get description
-                    //gtEvent.surroundingText();
-                    gtEventList.add(gtEvent);
+                    GTEvent gtEvent = new GTEvent(id,title,link,time,word,description);
+                    if(!gtEventList.contains(gtEvent)) gtEventList.add(gtEvent);
                 }
 
             }
@@ -211,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void scheduleNotification(Context context, GTEvent gtEvent) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
-                .setContentTitle("Upcoming event: " + gtEvent.getWord(mKeywordArrayAdapter.getItems()))
+                .setContentTitle("Upcoming event: " + gtEvent.word)
                 .setContentText("In 1 hour")
                 .setAutoCancel(true)
                 .setSmallIcon(R.mipmap.ic_launcher)
