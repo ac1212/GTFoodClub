@@ -7,14 +7,17 @@
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="24dp"
+        android:layout_margin="12dp"
         android:id="@+id/keywordTextView"
         android:layout_weight="1" />
 
     <Button
-        android:text="X"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:layout_weight="1" />
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/keyword_delete_button"
+        android:background="@drawable/delete"
+        android:alpha="0.54"
+        android:layout_margin="14dp"
+        android:layout_weight="0" />
 </LinearLayout>

@@ -6,10 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by User on 22-Feb-17.
@@ -17,11 +17,13 @@ import java.util.List;
 
 public class KeywordArrayAdapter extends ArrayAdapter<String> {
 
+    DataHelper mDH;
 
 
-    public KeywordArrayAdapter(Context context, int resource) {
+    public KeywordArrayAdapter(Context context, int resource, DataHelper _dh) {
         super(context, resource);
-
+        mDH = _dh;
+        addAll(mDH.loadKeywords());
     }
 
     public ArrayList<String> getItems()
@@ -41,6 +43,25 @@ public class KeywordArrayAdapter extends ArrayAdapter<String> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.keyword_list_item,parent,false);
         TextView tv = (TextView) convertView.findViewById(R.id.keywordTextView);
         tv.setText(keyword);
+
+        //set up delete button
+        Button b = (Button) convertView.findViewById(R.id.keyword_delete_button);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteKeyword(position);
+            }
+        });
         return convertView;
+    }
+
+    private void deleteKeyword(int position)
+    {
+        if(getCount()==1)
+        {
+
+        }
+        remove(getItem(position));
+        mDH.saveKeywords(getItems());
     }
 }

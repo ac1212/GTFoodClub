@@ -1,7 +1,9 @@
 package com.therivalfaction.gtfoodclub;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,6 +17,7 @@ import java.util.Set;
 public class DataHelper {
 
     private Context context;
+    private static final String KEYWORDS_SET_KEY = "keywords_set";
 
     public DataHelper(Context _context)
     {
@@ -23,11 +26,8 @@ public class DataHelper {
 
     public ArrayList<String> loadKeywords()
     {
-        SharedPreferences sharedPref = context.getSharedPreferences(
-                context.getString(R.string.keyword_sharedPref_file_key),
-                Context.MODE_PRIVATE);
-        Set<String> keywordSet = sharedPref.getStringSet(context.getString(R.string.keyword_sharedPref_set_key),
-                null);
+        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        Set<String> keywordSet = sharedPref.getStringSet(KEYWORDS_SET_KEY, null);
         if(keywordSet==null) // this is being opened the first time. generate default set
         {
             keywordSet = new HashSet<String>();
@@ -45,5 +45,21 @@ public class DataHelper {
             sortedKeywords.set(i, sortedKeywords.get(i).substring(4)); //remove the sorting index
         return sortedKeywords;
 
+    }
+
+    public void saveKeywords(ArrayList<String> keywords)
+    {
+        Set<String> keywordsSet = new HashSet<String>();
+        int i = 1;
+        for (String s : keywords)
+        {
+            Log.d("AC1","Adding >>"+s+"<<");
+            keywordsSet.add(String.format("%03d$%s",i,s));
+            i++;
+        }
+        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putStringSet(KEYWORDS_SET_KEY,keywordsSet);
+        editor.commit();
     }
 }

@@ -178,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //set toolbar
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
@@ -194,9 +195,8 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         // load keywords
-        mKeywordArrayAdapter = new KeywordArrayAdapter(this, R.layout.keyword_list_item);
         DataHelper dh = new DataHelper(this);
-        mKeywordArrayAdapter.addAll(dh.loadKeywords());
+        mKeywordArrayAdapter = new KeywordArrayAdapter(this, R.layout.keyword_list_item, dh);
 
 
         ListView keywordListView = (ListView) findViewById(R.id.drawerListView);
