@@ -47,7 +47,21 @@ public class DataHelper {
 
     }
 
-    public void saveKeywords(ArrayList<String> keywords)
+    public void addKeyword(String keyword)
+    {
+        ArrayList<String> keywords = loadKeywords();
+        keywords.add(keyword);
+        saveKeywords(keywords);
+    }
+
+    public void removeKeyword(String keyword)
+    {
+        ArrayList<String> keywords = loadKeywords();
+        keywords.remove(keyword);
+        saveKeywords(keywords);
+    }
+
+    private void saveKeywords(ArrayList<String> keywords)
     {
         Set<String> keywordsSet = new HashSet<String>();
         int i = 1;

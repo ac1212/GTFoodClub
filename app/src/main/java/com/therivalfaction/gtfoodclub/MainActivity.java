@@ -266,10 +266,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(mDrawerToggle.onOptionsItemSelected(item)) return true;
         switch (item.getItemId()) {
-            case R.id.about_menu_item:
+            /*case R.id.about_menu_item:
                 Intent i = new Intent(this, AboutActivity.class);
                 startActivity(i);
                 return true;
+                */
             default:
                 return super.onOptionsItemSelected(item);
         }
