@@ -5,109 +5,121 @@
         jar="C:\Users\User\.android\build-cache\2a5ce2f34c947e92b7f3264e572afec2c386774f\output\jars\classes.jar"
         revision="25.0.0"
         sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-adabe900b031643e665c50290c9b629b13beaa04.jar" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-adabe900b031643e665c50290c9b629b13beaa04.jar" />
     </item>
     <item
         jar="C:\Users\User\.android\build-cache\cfcd3d362dda7c8ecc3a548ce38beb4ae3a5f8c8\output\jars\libs\internal_impl-25.0.1.jar"
         revision="25.0.0"
         sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\internal_impl-25.0.1-27a5cbdc45f5e315e58a53e528b817a47b9737a5.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\935cce4806a37736dd3b32ec6c28fecb3833a59c\output\jars\libs\internal_impl-25.0.1.jar"
-        revision="25.0.0"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\internal_impl-25.0.1-9736d7be784a16e587432d4a8770549dde88ad07.jar" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\internal_impl-25.0.1-27a5cbdc45f5e315e58a53e528b817a47b9737a5.jar" />
     </item>
     <item
         jar="C:\Users\User\.android\build-cache\7e510d4922f5705fd838bd6fd65e4ea1e9e03c14\output\jars\libs\internal_impl-25.0.1.jar"
         revision="25.0.0"
         sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\internal_impl-25.0.1-4625e7641a1cf8d081c3187ba8313b0ab28b38a8.jar" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\internal_impl-25.0.1-4625e7641a1cf8d081c3187ba8313b0ab28b38a8.jar" />
     </item>
     <item
-        jar="C:\Users\User\.android\build-cache\f1a20034eeadc01c4b13e9bf6f950598e5add4be\output\jars\classes.jar"
+        jar="D:\Android\sdk\platforms\android-25\android.jar"
         revision="25.0.0"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-fb5bc3da8e6f13efde6ddca549cb1f510cb1457f.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\e994e58552fae56d97fefadeb5320bb0c688e6ce\output\jars\classes.jar"
-        revision="25.0.0"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-a9e9c422234a47ab8da6bf71ed2f1a2304c9f515.jar" />
+        sha1="712a0312fe844a21a1b3812fa960c363a1578984">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackRuntimeLibraries\release\jars\8000\40\android-ce7661520c3da8e0b04fc492cb363f96ac7248b6.jar" />
     </item>
     <item
         jar="C:\Users\User\.android\build-cache\4c08528cc1cfe04187e6cb76757142875810c096\output\jars\classes.jar"
         revision="25.0.0"
         sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-7c248c9cb730829879fe45cae0ae680866f6a4be.jar" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-7c248c9cb730829879fe45cae0ae680866f6a4be.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\935cce4806a37736dd3b32ec6c28fecb3833a59c\output\jars\libs\internal_impl-25.0.1.jar"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\internal_impl-25.0.1-9736d7be784a16e587432d4a8770549dde88ad07.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\e994e58552fae56d97fefadeb5320bb0c688e6ce\output\jars\classes.jar"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-a9e9c422234a47ab8da6bf71ed2f1a2304c9f515.jar" />
     </item>
     <item
         jar="C:\Users\User\.android\build-cache\935cce4806a37736dd3b32ec6c28fecb3833a59c\output\jars\classes.jar"
         revision="25.0.0"
         sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-74e9f3012b3ef4ac8977a241d07372d8abe05977.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\cfcd3d362dda7c8ecc3a548ce38beb4ae3a5f8c8\output\jars\classes.jar"
-        revision="25.0.0"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-cf07f38ff446303bbc8a7f64e703e25ad6becdca.jar" />
-    </item>
-    <item
-        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
-        revision="25.0.0"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\support-annotations-25.0.1-053d431190d44f31891d4ae327a19e243234cc8e.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\20dddaaa6e694704fe06471f549246efe1c5c07f\output\jars\libs\internal_impl-25.0.1.jar"
-        revision="25.0.0"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\internal_impl-25.0.1-692827afb4179e08ab35c9122f1a1d4160fedae2.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\20dddaaa6e694704fe06471f549246efe1c5c07f\output\jars\classes.jar"
-        revision="25.0.0"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-d25e97bab9645ca35cbbe9d1b216ce735c74f0ad.jar" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-74e9f3012b3ef4ac8977a241d07372d8abe05977.jar" />
     </item>
     <item
         jar="C:\Users\User\.android\build-cache\7e510d4922f5705fd838bd6fd65e4ea1e9e03c14\output\jars\classes.jar"
         revision="25.0.0"
         sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-f586fd1d3766c5424b139aec73364679c8e0ce19.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\75638159e0317b6c5b8df73f73da96bf15ef4286\output\jars\classes.jar"
-        revision="25.0.0"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-1e2c3eb919d4ebae86117a564100d2d715449730.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\b4c67aa0b3e7ff0431b7d33657b3378b761ce040\output\jars\classes.jar"
-        revision="25.0.0"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-253d57b968d2b63837473139167142e59abfcecc.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\2a5ce2f34c947e92b7f3264e572afec2c386774f\output\jars\libs\internal_impl-25.0.1.jar"
-        revision="25.0.0"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\internal_impl-25.0.1-0c8db1a0986df8f3cdddc40ea232a2d6c504eda7.jar" />
-    </item>
-    <item
-        jar="C:\Users\User\.android\build-cache\9c13bfe646e86b94a205b3e679370838f7cc83c2\output\jars\classes.jar"
-        revision="25.0.0"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-ff2335824038bceb93aa654e712ed1b0b836c5cf.jar" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-f586fd1d3766c5424b139aec73364679c8e0ce19.jar" />
     </item>
     <item
         jar="C:\Users\User\.android\build-cache\422b04c15a15090e719a60a9d04b4db27c861e50\output\jars\classes.jar"
         revision="25.0.0"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-f4ba2370ad7f8f541150806ba960c29e54db4b35.jar" />
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-f4ba2370ad7f8f541150806ba960c29e54db4b35.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\platforms\android-25\optional\org.apache.http.legacy.jar"
+        revision="25.0.0"
+        sha1="5f0541a4298daa0590b22cfbde43f85e2a675545">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackRuntimeLibraries\release\jars\8000\40\org.apache.http.legacy-42fb61f3f6bdc1bd50c6d813150a70143a841fa8.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\75638159e0317b6c5b8df73f73da96bf15ef4286\output\jars\classes.jar"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-1e2c3eb919d4ebae86117a564100d2d715449730.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        revision="25.0.0"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\support-annotations-25.0.1-053d431190d44f31891d4ae327a19e243234cc8e.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\cfcd3d362dda7c8ecc3a548ce38beb4ae3a5f8c8\output\jars\classes.jar"
+        revision="25.0.0"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-cf07f38ff446303bbc8a7f64e703e25ad6becdca.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\20dddaaa6e694704fe06471f549246efe1c5c07f\output\jars\classes.jar"
+        revision="25.0.0"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-d25e97bab9645ca35cbbe9d1b216ce735c74f0ad.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\b4c67aa0b3e7ff0431b7d33657b3378b761ce040\output\jars\classes.jar"
+        revision="25.0.0"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-253d57b968d2b63837473139167142e59abfcecc.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\20dddaaa6e694704fe06471f549246efe1c5c07f\output\jars\libs\internal_impl-25.0.1.jar"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\internal_impl-25.0.1-692827afb4179e08ab35c9122f1a1d4160fedae2.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\2a5ce2f34c947e92b7f3264e572afec2c386774f\output\jars\libs\internal_impl-25.0.1.jar"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\internal_impl-25.0.1-0c8db1a0986df8f3cdddc40ea232a2d6c504eda7.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\f1a20034eeadc01c4b13e9bf6f950598e5add4be\output\jars\classes.jar"
+        revision="25.0.0"
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-fb5bc3da8e6f13efde6ddca549cb1f510cb1457f.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.android\build-cache\9c13bfe646e86b94a205b3e679370838f7cc83c2\output\jars\classes.jar"
+        revision="25.0.0"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="D:\User\Documents\GitHub\GTFoodClub\app\build\intermediates\transforms\preJackPackagedLibraries\release\jars\8000\1f\classes-ff2335824038bceb93aa654e712ed1b0b836c5cf.jar" />
     </item>
 
 </items>

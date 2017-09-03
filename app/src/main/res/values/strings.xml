@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GT Food Club</string>
+    <string name="app_name">Campus Food Club</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_closed">Closed</string>
     <string name="version">v1.0</string>

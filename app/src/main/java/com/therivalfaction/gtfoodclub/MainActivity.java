@@ -2,6 +2,7 @@ package com.therivalfaction.gtfoodclub;
 
 import android.app.AlarmManager;
 import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -24,8 +25,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     GTEventArrayAdapter adapter;
     ActionBarDrawerToggle mDrawerToggle;
     KeywordArrayAdapter mKeywordArrayAdapter;
+    DataHelper dh;
 
     //async XML downloader class
     private class XMLDownloader extends AsyncTask<String, Void, ArrayList<GTEvent>> {
@@ -84,8 +88,15 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+            /*
+            if(dh.isNotificationOn())
+            {
+                for(GTEvent gtEvent : gtEvents)
+                    scheduleNotification(getApplicationContext(),gtEvent);
+            }
+            */
 
-            for(GTEvent gtEvent : gtEvents) scheduleNotification(getApplicationContext(),gtEvent);
+
         }
 
         private ArrayList<GTEvent> getGoodEventsFromNet(String urlString) throws XmlPullParserException, IOException, ParseException {
@@ -174,10 +185,20 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String URLStringCalendar = "http://www.calendar.gatech.edu/feeds/events.xml";
 
+    public boolean getIsNotificationOn()
+    {
+        if(dh==null) dh = new DataHelper(this);
+        return dh.isNotificationOn();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("AC1", "onCreate fired");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //initialize DataHelper
+        dh = new DataHelper(this);
 
         //set toolbar
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
@@ -194,8 +215,38 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(mDrawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+        //get settings
+        Switch sw = (Switch) findViewById(R.id.notification_switch);
+        sw.setChecked(dh.isNotificationOn());
+
+        //set up notifications switch interaction
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                dh.setIsNotificationOn(b);
+                if(!b) // if notifications have been turned off, cancel all future notifications
+                {
+
+                }
+            }
+        });
+
+        //test
+        if(dh.isNotificationOn())
+        {
+            GTEvent gtEvent = new GTEvent("1","Test event","www",new Date(System.currentTimeMillis()),"word","desc");
+            scheduleNotification(getApplicationContext(), gtEvent);
+        }
+
+        //refresh main list
+        refreshList();
+    }
+
+    private void refreshList()
+    {
         // load keywords
-        DataHelper dh = new DataHelper(this);
+
         mKeywordArrayAdapter = new KeywordArrayAdapter(this, R.layout.keyword_list_item, dh);
 
 
@@ -211,12 +262,13 @@ public class MainActivity extends AppCompatActivity {
         iv.setVisibility(View.VISIBLE);
         AnimationDrawable ad = (AnimationDrawable) iv.getBackground();
         ad.start();
-        Log.d("AC1", "onCreate fired");
+
         //load events asynchronously
         new XMLDownloader().execute(URLStringCalendar);
     }
 
     private void scheduleNotification(Context context, GTEvent gtEvent) {
+        //build basic notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
                 .setContentTitle("Upcoming event: " + gtEvent.word)
                 .setContentText("In 1 hour")
@@ -224,21 +276,30 @@ public class MainActivity extends AppCompatActivity {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
 
+        //tapping notification will open MainActivity
         Intent intent = new Intent(context, MainActivity.class);
-        //TODO: replace with hashcode
         int notificationId = (int) gtEvent.time.getTime();
-        PendingIntent activity = PendingIntent.getActivity(context, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        //check if alarm for this event has already been created
+        PendingIntent activity = PendingIntent.getActivity(context, notificationId, intent, PendingIntent.FLAG_NO_CREATE);
+        if(activity != null) return; //already made. return.
+        // else continue
+        activity = PendingIntent.getActivity(context, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(activity);
-
         Notification notification = builder.build();
-
         Intent notificationIntent = new Intent(context, MyNotificationReceiver.class);
         notificationIntent.putExtra(MyNotificationReceiver.NOTIFICATION_ID, notificationId);
         notificationIntent.putExtra(MyNotificationReceiver.NOTIFICATION, notification);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, notificationId, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        notificationIntent.putExtra(MyNotificationReceiver.CANCEL_NOTIFICATION, false);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, notificationId, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, gtEvent.time.getTime()-60*60*1000, pendingIntent);
+
+        //cancel the notification when the event has passed
+        notificationIntent.putExtra(MyNotificationReceiver.CANCEL_NOTIFICATION, true);
+        pendingIntent = PendingIntent.getBroadcast(context, notificationId+1, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, gtEvent.time.getTime()+60*60*1000, pendingIntent);
     }
 
 

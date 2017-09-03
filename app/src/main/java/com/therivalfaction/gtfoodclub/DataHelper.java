@@ -17,7 +17,9 @@ import java.util.Set;
 public class DataHelper {
 
     private Context context;
+    private static final String APP_PREFERENCES = "campus_food_club_preferences";
     private static final String KEYWORDS_SET_KEY = "keywords_set";
+    private static final String IS_NOTIFICATION_ON_KEY = "isNotificationOn";
 
     public DataHelper(Context _context)
     {
@@ -27,6 +29,7 @@ public class DataHelper {
     public ArrayList<String> loadKeywords()
     {
         SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        //get keywords
         Set<String> keywordSet = sharedPref.getStringSet(KEYWORDS_SET_KEY, null);
         if(keywordSet==null) // this is being opened the first time. generate default set
         {
@@ -74,6 +77,20 @@ public class DataHelper {
         SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putStringSet(KEYWORDS_SET_KEY,keywordsSet);
+        editor.commit();
+    }
+
+    public boolean isNotificationOn()
+    {
+        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        return sharedPref.getBoolean(IS_NOTIFICATION_ON_KEY, true);
+    }
+
+    public void setIsNotificationOn(boolean b)
+    {
+        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(IS_NOTIFICATION_ON_KEY, b);
         editor.commit();
     }
 }
