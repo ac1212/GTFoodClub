@@ -2,7 +2,7 @@
     <string name="app_name">Campus Food Club</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_closed">Closed</string>
-    <string name="version">v1.0</string>
+    <string name="version">v1.1</string>
     <string name="keyword_sharedPref_file_key">keywords_file</string>
     <string name="keyword_sharedPref_set_key">keywords_set</string>
     <string name="intentkey_notification_id">notification_id</string>

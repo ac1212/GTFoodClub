@@ -28,7 +28,7 @@ public class DataHelper {
 
     public ArrayList<String> loadKeywords()
     {
-        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         //get keywords
         Set<String> keywordSet = sharedPref.getStringSet(KEYWORDS_SET_KEY, null);
         if(keywordSet==null) // this is being opened the first time. generate default set
@@ -74,7 +74,7 @@ public class DataHelper {
             keywordsSet.add(String.format("%03d$%s",i,s));
             i++;
         }
-        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putStringSet(KEYWORDS_SET_KEY,keywordsSet);
         editor.commit();
@@ -82,13 +82,13 @@ public class DataHelper {
 
     public boolean isNotificationOn()
     {
-        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         return sharedPref.getBoolean(IS_NOTIFICATION_ON_KEY, true);
     }
 
     public void setIsNotificationOn(boolean b)
     {
-        SharedPreferences sharedPref = ((Activity)context).getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putBoolean(IS_NOTIFICATION_ON_KEY, b);
         editor.commit();

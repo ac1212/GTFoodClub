@@ -23,7 +23,8 @@ public class MyNotificationReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.d("AC","reached MyNotificationReceiver");
 
-        context.getSharedPreferences()
+        DataHelper dh = new DataHelper(context);
+        if(!dh.isNotificationOn()) return;
 
         NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         int nid = intent.getIntExtra(NOTIFICATION_ID, 0);
